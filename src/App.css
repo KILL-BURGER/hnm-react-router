@@ -1,0 +1,51 @@
+.header {
+    margin-bottom: 20px;
+}
+
+.login-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px;
+}
+
+.nav-section {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-area {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu-list li {
+    padding: 10px;
+}
+
+.menu-search {
+    border-bottom: 1px solid black;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+}
+
+.menu-search input {
+    border: none;
+    margin-left: 5px;
+}
+
+.card {
+    border: none !important;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}

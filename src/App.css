@@ -50,3 +50,22 @@
     transform: scale(1.1);
     z-index: 1;
 }
+
+.product-img {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.drop-down {
+    margin-top: 20px;
+}
+
+.product-info {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    width: 100%;
+    margin-top: 20px;
+}

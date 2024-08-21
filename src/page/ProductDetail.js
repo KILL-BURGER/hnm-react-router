@@ -1,22 +1,47 @@
-import React from "react";
-import {Button, Container} from "react-bootstrap";
+import React, {useEffect, useState} from "react";
+import {Button, Col, Container, Dropdown, Row} from "react-bootstrap";
+import {useParams} from "react-router-dom";
 
 const ProductDetail = () => {
+    const {id} = useParams();
+    const [product, setProduct] = useState(null);
+    const getProductDetail = async () => {
+        const URL = `http://localhost:4000/products/${id}`;
+        const response = await fetch(URL);
+        const data = await response.json();
+        console.log('data', data);
+        setProduct(data);
+    }
+    useEffect(() => {
+        getProductDetail();
+    }, []);
 
     return <Container>
-        <div>
-            <img src='#' alt='상품 이미지'/>
-            <h2>상품명</h2>
-            <h4>₩200000</h4>
-            <span>Conscious choice</span>
-            <select>
-                <option>사이즈 선택</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-            </select>
-            <Button variant='dark'>추가</Button>
-        </div>
+        <Row>
+            <Col className='col-md-6 col-12 product-img'>
+                <img src={product?.img} alt='상품이미지'/>
+            </Col>
+            <Col className='col-md-6 col-12'>
+                <div className='product-info'>{product?.title}</div>
+                <div className='product-info'>₩ {product?.price}</div>
+                <div style={{fontSize:'11px'}}>{product?.choice ? 'Conscious choice' : ''}</div>
+                <Dropdown className='drop-down'>
+                    <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">
+                        사이즈 선택
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        {product?.size.map((item, index) => <Dropdown.Item href="#" key={index}>{item}</Dropdown.Item>)}
+                    </Dropdown.Menu>
+                </Dropdown>
+                <div className='drop-down'>
+                    <select>
+                        <option>사이즈 선택</option>
+
+                    </select>
+                </div>
+                <Button variant='dark' className='add-btn'>추가</Button>
+            </Col>
+        </Row>
     </Container>;
 };
 

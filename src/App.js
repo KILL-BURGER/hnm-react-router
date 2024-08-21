@@ -1,7 +1,6 @@
 import "./App.css";
 import {Route, Routes} from "react-router-dom";
 import ProductAll from "./page/ProductAll";
-import ProductDetail from "./page/ProductDetail";
 import Login from "./page/Login";
 import Navbar from "./component/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +14,7 @@ function App() {
         console.log('authenticate', authenticate);
     }, [authenticate]);
     return <div>
-        <Navbar/>
+        <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
         <Routes>
             <Route path="/" element={<ProductAll/>}/>
             <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>}/>

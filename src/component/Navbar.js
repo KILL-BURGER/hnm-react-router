@@ -2,14 +2,19 @@ import React from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser} from "@fortawesome/free-regular-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import {useNavigate} from "react-router-dom";
 
 const Navbar = () => {
     const menuList = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M Home', 'Sale', '지속가능성'];
+    const navigate = useNavigate();
+    const goToLogin = () => {
+        navigate('/login');
+    };
     return <div className="header">
         <div className="nav-header">
-            <div className="login-button">
+            <div className="login-button" onClick={goToLogin}>
                 <FontAwesomeIcon icon={faUser}/>
-                <span style={{marginLeft:"10px"}}>로그인</span>
+                <span style={{marginLeft: "10px"}}>로그인</span>
             </div>
         </div>
         <div className="nav-section">
@@ -22,7 +27,7 @@ const Navbar = () => {
                 {menuList.map((menu, index) => <li key={index}>{menu}</li>)}
             </ul>
             <div className="menu-search">
-                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faSearch}/>
                 <input type='text' placeholder='제품검색'/>
             </div>
         </div>

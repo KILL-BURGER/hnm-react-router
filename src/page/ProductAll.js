@@ -10,20 +10,20 @@ const ProductAll = () => {
         const data = await response.json();
         setProductList(data);
     };
-
     useEffect(() => {
         getProducts();
     }, []);
+
     return (
-            <Container>
-                <Row>
-                    {productList.map((menu, index) => (
-                        <Col md={3} sm={12} key={index}>
-                            <ProductCard item={menu}/>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
+        <Container>
+            <Row>
+                {productList.map((menu, index) => (
+                    <Col md={3} sm={12} key={index}>
+                        <ProductCard item={menu}/>
+                    </Col>
+                ))}
+            </Row>
+        </Container>
     );
 };
 

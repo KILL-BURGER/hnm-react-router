@@ -18,7 +18,6 @@ const Navbar = ({authenticate, setAuthenticate}) => {
         if (event.key === 'Enter') {
             const keyword = event.target.value;
             navigate(`/?q=${keyword}`);
-
         }
     }
     return <div className="header">

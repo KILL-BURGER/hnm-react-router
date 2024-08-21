@@ -6,7 +6,7 @@ const ProductDetail = () => {
     const {id} = useParams();
     const [product, setProduct] = useState(null);
     const getProductDetail = async () => {
-        const deployURL = `http://my-json-server.typicode.com/KILL-BURGER/hnm-react-router/products/${id}`;
+        const deployURL = `https://my-json-server.typicode.com/KILL-BURGER/hnm-react-router/products/${id}`;
         const URL = `http://localhost:4000/products/${id}`;
         const response = await fetch(deployURL);
         const data = await response.json();

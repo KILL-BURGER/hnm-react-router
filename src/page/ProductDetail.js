@@ -34,12 +34,6 @@ const ProductDetail = () => {
                         {product?.size.map((item, index) => <Dropdown.Item href="#" key={index}>{item}</Dropdown.Item>)}
                     </Dropdown.Menu>
                 </Dropdown>
-                <div className='drop-down'>
-                    <select>
-                        <option>사이즈 선택</option>
-
-                    </select>
-                </div>
                 <Button variant='dark' className='add-btn'>추가</Button>
             </Col>
         </Row>

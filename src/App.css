@@ -2,6 +2,17 @@
     margin-bottom: 20px;
 }
 
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-bars {
+    margin-left: 20px;
+    visibility: hidden;
+}
+
 .login-button {
     display: flex;
     justify-content: flex-end;
@@ -40,6 +51,54 @@
     border: none;
     margin-left: 5px;
 }
+
+.side-menu {
+    background-color: beige;
+    height: 100%;
+    width: 250px;
+    left: 0;
+    overflow-x: hidden;
+    /*display: none;*/
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.side-menu .close-button {
+    background: none;
+    border: none;
+    font-size: 36px;
+    margin-left: 50px;
+    position: absolute;
+    right: 25px;
+    top: 0;
+}
+
+.side-menu-list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu-list button {
+    background: none;
+    border: none;
+    margin: 5px;
+    width: 120px;
+}
+
+@media (max-width: 1010px) {
+    .menu-bars {
+        visibility: visible;
+    }
+
+    .menu-area {
+        display: none;
+    }
+}
+
 
 .card {
     border: none !important;
